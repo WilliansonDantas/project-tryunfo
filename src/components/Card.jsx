@@ -2,17 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component {
-  state = {
-    cardTrunfo: true,
-  };
+  // state = {
+  //   cardTrunfo: false,
+  // };
 
-  handleChange({ target }) {
-    const { name } = target;
-    const value = (target.type === 'checkbox') ? target.checked : target.value;
-    this.setState({
-      [name]: value,
-    });
-  }
+  // { boleando ? <div><div> : null
+
+  // handleChange({ target }) {
+  //   const { name } = target;
+  //   const value = (target.type === 'checkbox') ? target.checked : target.value;
+  //   this.setState({
+  //     [name]: value,
+  //   });
+  // }
 
   render() {
     const {
@@ -22,8 +24,9 @@ class Card extends React.Component {
       cardAttr2,
       cardAttr3,
       cardImage,
-      cardRare } = this.props;
-    const { cardTrunfo } = this.state;
+      cardRare,
+      cardTrunfo } = this.props;
+    // const { cardTrunfo } = this.state;
     return (
       <>
         <p
@@ -57,13 +60,7 @@ class Card extends React.Component {
         >
           {cardRare}
         </p>
-        <p
-          onChange={ this.handleChange }
-          cardTrunfo={ cardTrunfo }
-          data-testid="trunfo-card"
-        >
-          Super Trunfo
-        </p>
+        { cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : null }
       </>
     );
   }
@@ -77,6 +74,7 @@ Card.propTypes = {
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
 };
 
 export default Card;
