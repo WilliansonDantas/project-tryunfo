@@ -13,13 +13,13 @@ class Card extends React.Component {
       cardRare,
       cardTrunfo } = this.props;
     return (
-      <>
+      <form>
         <p
           data-testid="name-card"
         >
           {cardName}
         </p>
-        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+        <img data-testid="image-card" src={ cardImage } alt={ `${cardName}` } />
         <p
           data-testid="description-card"
         >
@@ -46,7 +46,7 @@ class Card extends React.Component {
           {cardRare}
         </p>
         { cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo </p> : null }
-      </>
+      </form>
     );
   }
 }
