@@ -2,20 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component {
-  // state = {
-  //   cardTrunfo: false,
-  // };
-
-  // { boleando ? <div><div> : null
-
-  // handleChange({ target }) {
-  //   const { name } = target;
-  //   const value = (target.type === 'checkbox') ? target.checked : target.value;
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // }
-
   render() {
     const {
       cardName,
@@ -26,7 +12,6 @@ class Card extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo } = this.props;
-    // const { cardTrunfo } = this.state;
     return (
       <>
         <p
