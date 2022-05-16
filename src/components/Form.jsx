@@ -98,7 +98,7 @@ class Form extends React.Component {
             <option value="muito raro">Muito raro</option>
           </select>
         </label>
-        { hasTrunfo ? (<p> Você já tem um Super Trunfo em seu baralho </p>) : (
+        { hasTrunfo ? <p> Você já tem um Super Trunfo em seu baralho </p> : (
           <label htmlFor="superTrunfo">
             Super Trunfo
             <input
