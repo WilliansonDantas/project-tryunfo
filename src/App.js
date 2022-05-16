@@ -12,7 +12,7 @@ class App extends React.Component {
     cardImage: '',
     cardRare: 'Normal',
     cardTrunfo: false,
-    hasTrunfo: true,
+    hasTrunfo: false,
     isSaveButtonDisabled: true,
     newState: [],
   };
@@ -33,7 +33,7 @@ class App extends React.Component {
       cardImage: '',
       cardRare: 'Normal',
       cardTrunfo: false,
-      hasTrunfo: false,
+      hasTrunfo: true,
       isSaveButtonDisabled: true,
     }));
   }
