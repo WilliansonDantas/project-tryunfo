@@ -6,26 +6,39 @@ class App extends React.Component {
   state = {
     cardName: '',
     cardDescription: '',
-    cardAttr1: '',
-    cardAttr2: '',
-    cardAttr3: '',
+    cardAttr1: 0,
+    cardAttr2: 0,
+    cardAttr3: 0,
     cardImage: '',
     cardRare: 'Normal',
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    newState: [],
   };
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.type
-      === 'checkbox' ? event.target.checked : event.target.value }, this.saveButton);
+      === 'checkbox' ? event.target.checked : event.target.value }, this.checkSaveButton);
   };
 
-  isSaveButtonDisabled = () => {
+  onSaveButtonClick = () => {
+    const { newState } = this.state;
+    newState.push(this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardImage: '',
+      cardRare: 'Normal',
+      cardTrunfo: false,
+      hasTrunfo: false,
+      isSaveButtonDisabled: true,
+    }));
+  }
 
-  };
-
-  saveButton = () => {
+  checkSaveButton = () => {
     const {
       cardName,
       cardDescription,
@@ -43,11 +56,11 @@ class App extends React.Component {
     && cardRare !== ''
     && ((cardAttr1 * 1) + (cardAttr2 * 1) + (cardAttr3 * 1)) <= somaAtributos
     && cardAttr1 <= limiteAtributo
-      && cardAttr2 <= limiteAtributo
-      && cardAttr3 <= limiteAtributo
-      && cardAttr1 >= 0
-      && cardAttr2 >= 0
-      && cardAttr3 >= 0) {
+    && cardAttr2 <= limiteAtributo
+    && cardAttr3 <= limiteAtributo
+    && cardAttr1 >= 0
+    && cardAttr2 >= 0
+    && cardAttr3 >= 0) {
       this.setState({ isSaveButtonDisabled: false });
     } else {
       this.setState({ isSaveButtonDisabled: true });
@@ -83,6 +96,7 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
           onInputChange={ this.handleChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ cardName }
