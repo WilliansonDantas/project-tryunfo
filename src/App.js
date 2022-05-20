@@ -76,6 +76,20 @@ class App extends React.Component {
     }
   };
 
+  // deleteCard = (event, card) => {
+  // const { cardTrunfo } = this.state;
+  // if (card.cardTrunfo) {
+  //   this.setState({ hasTrunfo: false });
+  // }
+  // event.target.parentNode.remove();
+  // hasTrunfo();
+  // const { newState, cardImage } = this.state;
+  // newState
+  // .filter((item) => this
+  //   .setState({ listaNova: item.cardImage !== newState.includes(cardImage) }));
+  // this.setState({ newState: [] });
+  // }
+
   render() {
     const {
       cardName,
@@ -92,8 +106,20 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <>
+      <section>
         <h1> Trunfo </h1>
+        <div>
+          <label htmlFor="filtro">
+            Filtro de busca:
+            <input
+              name="filtro"
+              onChange={ this.handleChange }
+              id="filtro"
+              type="text"
+              data-testid="name-filter"
+            />
+          </label>
+        </div>
         <Form
           cardName={ cardName }
           cardDescription={ cardDescription }
@@ -119,20 +145,39 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           onInputChange={ this.handleChange }
         />
-        { console.log(newState) }
-        { newState !== undefined ? (newState
-          .map((card) => (<Card
-            key={ card.cardName }
-            cardName={ card.cardName }
-            cardDescription={ card.cardDescription }
-            cardAttr1={ card.cardAttr1 }
-            cardAttr2={ card.cardAttr2 }
-            cardAttr3={ card.cardAttr3 }
-            cardImage={ card.cardImage }
-            cardRare={ card.cardRare }
-            cardTrunfo={ card.cardTrunfo }
-          />))) : null}
-      </>
+        { newState !== undefined
+          ? (
+            newState
+              .map((card) => (
+                <section key={ card.cardName }>
+                  <Card
+                    cardName={ card.cardName }
+                    cardDescription={ card.cardDescription }
+                    cardAttr1={ card.cardAttr1 }
+                    cardAttr2={ card.cardAttr2 }
+                    cardAttr3={ card.cardAttr3 }
+                    cardImage={ card.cardImage }
+                    cardRare={ card.cardRare }
+                    cardTrunfo={ card.cardTrunfo }
+                  />
+                  <button
+                    name={ cardImage }
+                    onClick={ (event) => {
+                      if (card.cardTrunfo) {
+                        this.setState({ hasTrunfo: false });
+                      }
+                      event.target.parentElement.remove();
+                    } }
+                    type="button"
+                    data-testid="delete-button"
+                  >
+                    Excluir
+                  </button>
+                </section>
+              ))
+          )
+          : null}
+      </section>
     );
   }
 }
