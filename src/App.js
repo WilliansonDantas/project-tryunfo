@@ -36,6 +36,7 @@ class App extends React.Component {
       cardTrunfo: true,
       isSaveButtonDisabled: true,
       filtroName: '',
+      filtroRare: '',
     });
     this.hasTrunfo();
   }
@@ -77,20 +78,6 @@ class App extends React.Component {
     }
   };
 
-  // deleteCard = (event, card) => {
-  // const { cardTrunfo } = this.state;
-  // if (card.cardTrunfo) {
-  //   this.setState({ hasTrunfo: false });
-  // }
-  // event.target.parentNode.remove();
-  // hasTrunfo();
-  // const { newState, cardImage } = this.state;
-  // newState
-  // .filter((item) => this
-  //   .setState({ listaNova: item.cardImage !== newState.includes(cardImage) }));
-  // this.setState({ newState: [] });
-  // }
-
   render() {
     const {
       cardName,
@@ -105,6 +92,7 @@ class App extends React.Component {
       isSaveButtonDisabled,
       newState,
       filtroName,
+      filtroRare,
     } = this.state;
 
     return (
@@ -120,6 +108,21 @@ class App extends React.Component {
               type="text"
               data-testid="name-filter"
             />
+          </label>
+          <label htmlFor="filtroRare">
+            Raridade:
+            <select
+              name="filtroRare"
+              value={ filtroRare }
+              onChange={ this.handleChange }
+              data-testid="rare-filter"
+              id="filtroRare"
+            >
+              <option value="todas">Todas</option>
+              <option value="normal">Normal</option>
+              <option value="raro"> Raro </option>
+              <option value="muito raro">Muito raro</option>
+            </select>
           </label>
         </div>
         <Form
@@ -151,6 +154,9 @@ class App extends React.Component {
           ? (
             newState
               .filter((item) => (item.cardName.includes(filtroName)))
+              .filter((value) => (
+                filtroRare !== 'todas' ? value.cardRare === filtroRare : true
+              ))
               .map((card) => (
                 <section key={ card.cardName }>
                   <Card
