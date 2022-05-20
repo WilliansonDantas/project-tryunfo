@@ -16,8 +16,9 @@ class App extends React.Component {
     isSaveButtonDisabled: true,
     newState: [],
     filtroName: '',
-    filtroRare: '',
-    filtroTrunfo: '',
+    filtroRare: 'todas',
+    filtroTrunfo: false,
+    disabled: false,
   };
 
   handleChange = (event) => {
@@ -40,7 +41,7 @@ class App extends React.Component {
       isSaveButtonDisabled: true,
       filtroName: '',
       filtroRare: 'todas',
-      filtroTrunfo: '',
+      filtroTrunfo: false,
     });
     this.hasTrunfo();
   }
@@ -107,6 +108,7 @@ class App extends React.Component {
           <label htmlFor="filtroName">
             Filtro de busca:
             <input
+              disabled={ filtroTrunfo }
               name="filtroName"
               onChange={ this.handleChange }
               id="filtroName"
@@ -117,6 +119,7 @@ class App extends React.Component {
           <label htmlFor="filtroRare">
             Raridade:
             <select
+              disabled={ filtroTrunfo }
               name="filtroRare"
               value={ filtroRare }
               onChange={ this.handleChange }
@@ -172,6 +175,11 @@ class App extends React.Component {
               .filter((item) => (item.cardName.includes(filtroName)))
               .filter((value) => (
                 filtroRare !== 'todas' ? value.cardRare === filtroRare : true
+              ))
+              .filter((element) => (
+                filtroTrunfo
+                  ? element.cardTrunfo === true
+                  : element
               ))
               .map((card) => (
                 <section key={ card.cardName }>
