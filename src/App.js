@@ -15,6 +15,9 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     newState: [],
+    filtroName: '',
+    filtroRare: '',
+    filtroTrunfo: '',
   };
 
   handleChange = (event) => {
@@ -36,7 +39,8 @@ class App extends React.Component {
       cardTrunfo: true,
       isSaveButtonDisabled: true,
       filtroName: '',
-      filtroRare: '',
+      filtroRare: 'todas',
+      filtroTrunfo: '',
     });
     this.hasTrunfo();
   }
@@ -93,6 +97,7 @@ class App extends React.Component {
       newState,
       filtroName,
       filtroRare,
+      filtroTrunfo,
     } = this.state;
 
     return (
@@ -123,6 +128,17 @@ class App extends React.Component {
               <option value="raro"> Raro </option>
               <option value="muito raro">Muito raro</option>
             </select>
+          </label>
+          <label htmlFor="filtroTrunfo">
+            Super Trunfo
+            <input
+              name="filtroTrunfo"
+              checked={ filtroTrunfo }
+              onChange={ this.handleChange }
+              data-testid="trunfo-filter"
+              type="checkbox"
+              id="filtroTrunfo"
+            />
           </label>
         </div>
         <Form
