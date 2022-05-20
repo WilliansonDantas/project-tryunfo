@@ -18,7 +18,6 @@ class App extends React.Component {
     filtroName: '',
     filtroRare: 'todas',
     filtroTrunfo: false,
-    disabled: false,
   };
 
   handleChange = (event) => {
