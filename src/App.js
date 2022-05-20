@@ -35,6 +35,7 @@ class App extends React.Component {
       cardRare: 'Normal',
       cardTrunfo: true,
       isSaveButtonDisabled: true,
+      filtroName: '',
     });
     this.hasTrunfo();
   }
@@ -103,18 +104,19 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       newState,
+      filtroName,
     } = this.state;
 
     return (
       <section>
         <h1> Trunfo </h1>
         <div>
-          <label htmlFor="filtro">
+          <label htmlFor="filtroName">
             Filtro de busca:
             <input
-              name="filtro"
+              name="filtroName"
               onChange={ this.handleChange }
-              id="filtro"
+              id="filtroName"
               type="text"
               data-testid="name-filter"
             />
@@ -148,6 +150,7 @@ class App extends React.Component {
         { newState !== undefined
           ? (
             newState
+              .filter((item) => (item.cardName.includes(filtroName)))
               .map((card) => (
                 <section key={ card.cardName }>
                   <Card
@@ -161,7 +164,6 @@ class App extends React.Component {
                     cardTrunfo={ card.cardTrunfo }
                   />
                   <button
-                    name={ cardImage }
                     onClick={ (event) => {
                       if (card.cardTrunfo) {
                         this.setState({ hasTrunfo: false });
