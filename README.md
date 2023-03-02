@@ -23,16 +23,29 @@ A aplicação simula um jogo utilizando card's que podem ser confeccionados, est
   - Capturar eventos utilizando a sintaxe do React
   - Criar formulários utilizando sintaxe JSX
   - Transmitir informações de componentes filhos para componentes pais via callbacks
+ 
+-----
+
+## 📋 Execute o projeto em sua máquina
+
+Clone o repositório:
+
+```
+git clone git@github.com:tryber/sd-021-b-project-solar-system.git
+cd project-tryunfo
+npm install
+npm start
+```
+
+-----
+
+## 🛠️ Ferramentas & Metodologias Utilizadas
+
+  - [React.js](https://reactjs.org/docs/getting-started.html).
+
+-----
+
+⌨️ Desenvolvido por [Willianson Dantas](https://www.linkedin.com/in/willianson-dantas/)
 
 <!-- 
-
-  * `git clone git@github.com:tryber/sd-021-b-project-tryunfo.git`.
-
-    * `cd sd-021-b-project-tryunfo`
-
-
-    * `npm install`
-  
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
- 
 -->
