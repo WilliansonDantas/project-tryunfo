@@ -4,50 +4,6 @@
 
 <!-- 
 
-# Sumário
-
-- [Boas vindas ao repositório do projeto Tryunfo!](#boas-vindas-ao-repositório-do-projeto-tryunfo)
-- [Sumário](#sumário)
-- [Habilidades](#habilidades)
-- [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de Entrega](#data-de-entrega)
-- [Observações técnicas](#observações-técnicas)
-  - [Renderização Condicional](#renderização-condicional)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-- [Como desenvolver](#como-desenvolver)
-  - [ESLint e Stylelint](#eslint-e-stylelint)
-  - [Execução de testes unitários](#execução-de-testes-unitários)
-- [Informações sobre o Super Trunfo](#informações-sobre-o-super-trunfo)
-- [Criando, lendo, atualizando e apagando informações](#criando-lendo-atualizando-e-apagando-informações)
-- [Requisitos do projeto](#requisitos-do-projeto)
-  - [1. Crie o formulário que será usado para adicionar cartas ao baralho](#1-crie-o-formulário-que-será-usado-para-adicionar-cartas-ao-baralho)
-  - [2. Adicione as props necessárias ao componente de formulário](#2-adicione-as-props-necessárias-ao-componente-de-formulário)
-  - [3. Crie e renderize o componente Card com as props necessárias](#3-crie-e-renderize-o-componente-card-com-as-props-necessárias)
-  - [4. Crie o preview da carta que está sendo criada pelo formulário](#4-crie-o-preview-da-carta-que-está-sendo-criada-pelo-formulário)
-  - [5. Faça a validação do botão de Salvar no formulário](#5-faça-a-validação-do-botão-de-salvar-no-formulário)
-  - [6. Crie a função do botão salvar](#6-crie-a-função-do-botão-salvar)
-  - [7. Crie a validação do Super Trunfo](#7-crie-a-validação-do-super-trunfo)
-  - [8. Exiba a lista de cartas que estão salvas no estado](#8-exiba-a-lista-de-cartas-que-estão-salvas-no-estado)
-  - [9. Crie um botão para remover uma carta do baralho](#9-crie-um-botão-para-remover-uma-carta-do-baralho)
-- [Requisitos bônus](#requisitos-bônus)
-  - [10. Crie o filtro pelo nome da carta](#10-crie-o-filtro-pelo-nome-da-carta)
-  - [11. Crie o filtro por raridade da carta](#11-crie-o-filtro-por-raridade-da-carta)
-  - [12. Crie o filtro de Super Trunfo](#12-crie-o-filtro-de-super-trunfo)
-- [Requisitos não avaliativos](#requisitos-não-avaliativos)
-  - [Regras do Jogo](#regras-do-jogo)
-  - [O que será necessário](#o-que-será-necessário)
-  - [13. Iniciar o jogo](#13-iniciar-o-jogo)
-  - [14. Criar botão Próxima Carta](#14-criar-botão-próxima-carta)
-  - [15. Recomeçar o jogo](#15-recomeçar-o-jogo)
-- [Avisos Finais](#avisos-finais)
-
----
-
 # Habilidades
 Neste projeto, verificamos se voce é capaz de:
 
