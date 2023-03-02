@@ -3,12 +3,6 @@
 ![img](https://assets.dicebreaker.com/yu-gi-oh-card-exodia-anime-yugi.png/BROK/resize/1200x1200%3E/format/jpg/quality/70/yu-gi-oh-card-exodia-anime-yugi.png)
 
 <!-- 
-### Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
-
----
-
 # Boas vindas ao repositório do projeto Tryunfo!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
