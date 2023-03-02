@@ -14,31 +14,16 @@
   - Transmitir informações de componentes filhos para componentes pais via callbacks
 
 <!-- 
-# Instruções para entregar seu projeto
 
-## Antes de começar a desenvolver
-
-1. Clone o repositório
   * `git clone git@github.com:tryber/sd-021-b-project-tryunfo.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
+
     * `cd sd-021-b-project-tryunfo`
 
-2. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
+
     * `npm install`
-  * Inicialize o projeto:
+  
     * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-  * Verifique que os testes estão executando:
-    * `npm test` (os testes devem rodar e falhar)
-
-3. Crie uma branch a partir da branch `master`
-
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora, crie uma branch onde você vai guardar os commits do seu projeto
----
+ 
 
 ## Durante o desenvolvimento
 
