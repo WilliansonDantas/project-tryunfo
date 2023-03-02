@@ -1,23 +1,8 @@
-# :black_joker: Projeto Tryunfo
+# :black_joker: Projeto Tryunfo!
 
 ![img](https://assets.dicebreaker.com/yu-gi-oh-card-exodia-anime-yugi.png/BROK/resize/1200x1200%3E/format/jpg/quality/70/yu-gi-oh-card-exodia-anime-yugi.png)
 
 <!-- 
-# Boas vindas ao repositório do projeto Tryunfo!
-
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
-
-## Agradecimentos
-
-Pessoas que contribuíram com feedbacks no programa de _beta testers_ desse projeto:
-
-[@alanmdf](https://github.com/alanmdf), [@Aleilton](https://github.com/Aleilton), [@felipeventorim](https://github.com/felipeventorim), [@gusttavocaruso](https://github.com/gusttavocaruso), [@junglejf](https://github.com/junglejf) , [@JVictorC](https://github.com/JVictorC), [@lcds90](https://github.com/lcds90), [@Murilo-Rainho](https://github.com/Murilo-Rainho), [@rafaelromanoz](https://github.com/rafaelromanoz), [@rogeriop1990cv](https://github.com/rogeriop1990cv), [@RoyMusthang](https://github.com/RoyMusthang) e [@vdionysio](https://github.com/vdionysio)
-
----
-
 
 # Sumário
 
