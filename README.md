@@ -26,47 +26,6 @@
  
 
 
-### Dica: desativando testes
-
-Especialmente no início, quando a maioria dos testes está falhando, a saída após executar os testes é extensa. Você pode desabilitar temporariamente um teste utilizando a função `skip` junto à função `it`. Como o nome indica, esta função "pula" um teste:
-
-```js
-it.skip("Será validado se o campo de filtro por nome renderiza na tela", () => {
-  render(<App />)
-  const filterNameInput = screen.getByTestId(/name-filter/i);
-  expect(filterNameInput).toBeInTheDocument();
-});
-```
-![image](skip-image.png)
-
-Uma estratégia é pular todos os testes no início e ir implementando um teste de cada vez, removendo dele a função `skip`.
-
-Você também pode rodar apenas um arquivo de teste, por exemplo:
-
-```bash
-npm test 01.Form.test.js
-```
-
-ou
-
-```bash
-npm test 01.Form
-```
-
-Uma outra forma para contornar esse problema é a utilização da função `.only` após o `it`. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
-
-```js
-it.only("Será validado se o campo de filtro por nome renderiza na tela", () => {
-  render(<App />)
-  const filterNameInput = screen.getByTestId(/name-filter/i);
-  expect(filterNameInput).toBeInTheDocument();
-});
-```
-![image](only-image.png)
-
-
----
-
 # Informações sobre o Super Trunfo
 O Super Trunfo é um jogo de cartas que ficou muito popular no Brasil entre as décadas de 80 e 90, mas que faz bastante sucesso até hoje. Suas regras são bastante simples, por isso ele é considerado um jogo fácil de jogar. Apesar de ter regras simples, cada baralho  de Super Trunfo pode ter um tema diferente, o que o torna um jogo bastante divertido.
 
