@@ -31,7 +31,7 @@ A aplicação simula um jogo utilizando card's que podem ser confeccionados, est
 Clone o repositório:
 
 ```
-git clone git@github.com:tryber/sd-021-b-project-solar-system.git
+git clone git@github.com:WilliansonDantas/project-tryunfo.git
 cd project-tryunfo
 npm install
 npm start
