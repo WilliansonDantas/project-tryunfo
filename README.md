@@ -14,54 +14,6 @@
   - Transmitir informações de componentes filhos para componentes pais via callbacks
 
 <!-- 
-
-# Observações técnicas
-
-## Renderização condicional
-
-Em alguns requisitos será necessária a utilização de renderização condicional. Você pode verificar a documentação do React [Renderização Condicional](https://pt-br.reactjs.org/docs/conditional-rendering.html).
-
-Este comportamento é utilizado no React para renderizar, ou não, determinado componente de acordo com uma condição booleana.
-
-No exemplo abaixo, o estado `isActiveButton` começa como `false`, e ao clicar no botão `Clique em mim!`, mudamos esse estado para `true`.
-Na condição da renderização, quando o estado for `false`, renderizamos o paragrafo `Não está ativo!` e quando for `true`, renderizamos o paragrafo `Está ativo!`.
-
-```js
-import React from "react"
-
-class Componente extends React.Component {
- constructor() {
-  super();
-  this.state = {
-    isActiveButton: false,
-  };
- }
-
-  render() {
-    const { isActiveButton } = this.state;
-    return (
-      <div>
-        <button onClick={() => this.setState({isActiveButton: true})}>Clique em mim!</button>
-        {
-          isActiveButton ? <p>Está ativo!</p> : <p>Não está ativo!</p>
-        }
-      </div>
-    )
-  }
-}
-```
-
-No caso acima, temos duas possibilidades, ativo ou não, ou seja, duas renderizações. Mas se for de apenas uma renderização, como por exemplo, renderizar somente se o tamanho do array for maior do que 0, podemos utilizar o `&&`: 
-
-```js
-...
-{
-  array.length > 0 && <p>Array não vazio!</p>
-}
-...
-```
-
----
 # Instruções para entregar seu projeto
 
 ## Antes de começar a desenvolver
