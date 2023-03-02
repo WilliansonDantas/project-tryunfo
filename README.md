@@ -2,10 +2,9 @@
 
 ![img](https://assets.dicebreaker.com/yu-gi-oh-card-exodia-anime-yugi.png/BROK/resize/1200x1200%3E/format/jpg/quality/70/yu-gi-oh-card-exodia-anime-yugi.png)
 
-<!-- 
+-----
 
-# Habilidades
-Neste projeto, verificamos se voce é capaz de:
+## Habilidades
 
   * Ler o estado de um componente e usá-lo para alterar o que exibimos no browser
 
@@ -19,7 +18,7 @@ Neste projeto, verificamos se voce é capaz de:
 
   * Transmitir informações de componentes filhos para componentes pais via callbacks
 
----
+<!-- 
 
 # Entregáveis
 
