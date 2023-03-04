@@ -41,7 +41,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="atributo1">
-          Attr1:
+          Ataque:
           <input
             name="cardAttr1"
             value={ cardAttr1 }
@@ -52,7 +52,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="atributo2">
-          Attr2:
+          Defesa:
           <input
             name="cardAttr2"
             value={ cardAttr2 }
@@ -63,7 +63,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="atributo3">
-          Attr3:
+          Poder Extra:
           <input
             name="cardAttr3"
             value={ cardAttr3 }
