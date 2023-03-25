@@ -13,67 +13,66 @@ class Card extends React.Component {
       cardRare,
       cardTrunfo } = this.props;
     return (
-      <form className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-        <p
-          data-testid="name-card"
-          className="text-gray-800 font-bold text-xl mb-2 p-4"
-        >
-          {cardName}
-        </p>
-        <img
-          data-testid="image-card"
-          src={ cardImage }
-          alt={ cardName }
-          className="w-full object-cover h-64"
-        />
-        <p
-          data-testid="description-card"
-          className="text-gray-800 font-semibold text-md p-4"
-        >
-          {cardDescription}
-        </p>
-        <div
-          className="flex justify-between items-center p-4"
-        >
+      <form
+        className="flex flex-col items-center justify-cente"
+      >
+        <div className="mb-4">
+          <h2 className="text-xl font-bold" data-testid="name-card">{cardName}</h2>
+        </div>
+        <div className="mb-4">
+          <img
+            src={ cardImage }
+            alt={ cardName }
+            data-testid="image-card"
+            className="w-full h-64 object-contain"
+          />
+        </div>
+        <div className="mb-4">
+          <p className="text-lg" data-testid="description-card">{cardDescription}</p>
+        </div>
+        <div className="mb-4">
           <p
+            className="text-sm font-bold text-gray-700"
             data-testid="attr1-card"
-            className="text-gray-700 font-semibold text-sm"
           >
             {cardAttr1}
-          </p>
-          <p
-            data-testid="attr2-card"
-            className="text-gray-700 font-semibold text-sm"
-          >
-            {cardAttr2}
-          </p>
-          <p
-            data-testid="attr3-card"
-            className="text-gray-700 font-semibold text-sm"
-          >
-            {cardAttr3}
-          </p>
-          <p
-            data-testid="rare-card"
-            className="text-gray-700 font-semibold text-sm"
-          >
-            {cardRare}
+
           </p>
         </div>
-        {
-          cardTrunfo ? (
-            <p
-              data-testid="trunfo-card"
-              className="text-white bg-yellow-400 font-bold
-              uppercase tracking-wide text-sm p-2"
-            >
+        <div className="mb-4">
+          <p
+            className="text-sm font-bold text-gray-700"
+            data-testid="attr2-card"
+          >
+            {cardAttr2}
+
+          </p>
+        </div>
+        <div className="mb-4">
+          <p
+            className="text-sm font-bold text-gray-700"
+            data-testid="attr3-card"
+          >
+            {cardAttr3}
+
+          </p>
+        </div>
+        <div className="mb-4">
+          {cardTrunfo && (
+            <p className="text-sm font-bold text-gray-700" data-testid="rare-card">
+              <span className="mr-2">Raridade:</span>
+              <span className="text-lg">{cardRare}</span>
+            </p>
+          )}
+        </div>
+        <div className="mb-4">
+          {cardTrunfo && (
+            <p className="text-sm font-bold text-gray-700" data-testid="trunfo-card">
               Super Trunfo
             </p>
-          )
-            : null
-        }
+          )}
+        </div>
       </form>
-
     );
   }
 }
