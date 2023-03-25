@@ -25,15 +25,11 @@
 //               onChange={ this.handleChange }
 //               data-testid="rare-filter"
 //               id="filtroRare"
-//             >
-//               { typesCardrare.map((type) => (
-//                 <option
-//                   key={ type.lenght + 1 }
-//                   value={ type }
-//                 >
-//                   {type}
-//                 </option>
-//               ))}
+//            >
+// <option value="todas"> Todas </option>
+//               <option value="normal"> Normal </option>
+//               <option value="raro"> Raro </option>
+//               <option value="muito raro"> Muito raro </option>
 //             </select>
 //           </label>
 //         </div>
