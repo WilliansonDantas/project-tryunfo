@@ -14,7 +14,8 @@ class Card extends React.Component {
       cardTrunfo } = this.props;
     return (
       <form
-        className="flex flex-col items-center justify-cente"
+        className="bg-gray-200 flex flex-col items-center justify-cente
+        border rounded-lg shadow-lg px-12 py-1"
       >
         <div className="mb-4">
           <h2 className="text-xl font-bold" data-testid="name-card">{cardName}</h2>
@@ -24,7 +25,7 @@ class Card extends React.Component {
             src={ cardImage }
             alt={ cardName }
             data-testid="image-card"
-            className="w-full h-64 object-contain"
+            className="w-full h-64 object-contain border rounded px-6 py-1"
           />
         </div>
         <div className="mb-4">
@@ -57,7 +58,7 @@ class Card extends React.Component {
 
           </p>
         </div>
-        <div className="mb-4">
+        <div className="">
           {cardTrunfo && (
             <p className="text-sm font-bold text-gray-700" data-testid="rare-card">
               <span className="mr-2">Raridade:</span>
@@ -65,7 +66,7 @@ class Card extends React.Component {
             </p>
           )}
         </div>
-        <div className="mb-4">
+        <div className="">
           {cardTrunfo && (
             <p className="text-sm font-bold text-gray-700" data-testid="trunfo-card">
               Super Trunfo
