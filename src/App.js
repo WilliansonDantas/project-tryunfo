@@ -56,14 +56,8 @@ class App extends React.Component {
   }
 
   checkSaveButton = () => {
-    const {
-      cardName,
-      cardDescription,
-      cardImage,
-      cardRare,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3 } = this.state;
+    const { cardName, cardDescription, cardImage, cardRare,
+      cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const somaAtributos = 210;
     const limiteAtributo = 90;
     if (
@@ -103,133 +97,147 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <div
-        className="min-h-screen flex flex-col"
-      >
-        <main className="flex-grow">
-          <div className="border border-red-400 sm:border-2 md:border-4">
-            <h1> Trunfo </h1>
-          </div>
-          <div className="border border-indigo-400 sm:border-2 md:border-4">
-            <label htmlFor="filtroName">
-              Filtro de busca:
-              <input
-                disabled={ filtroTrunfo }
-                name="filtroName"
-                onChange={ this.handleChange }
-                id="filtroName"
-                type="text"
-                data-testid="name-filter"
-              />
-            </label>
-          </div>
-          <div className="border border-purple-400 sm:border-2 md:border-4">
-            <label htmlFor="filtroRare">
-              Raridade:
-              <select
-                disabled={ filtroTrunfo }
-                name="filtroRare"
-                value={ filtroRare }
-                onChange={ this.handleChange }
-                data-testid="rare-filter"
-                id="filtroRare"
-              >
-                { typesCardrare.map((type) => (
-                  <option
-                    key={ type.lenght + 1 }
-                    value={ type }
-                  >
-                    {type}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div className="border border-yellow-400 sm:border-2 md:border-4">
-            <label htmlFor="filtroTrunfo">
-              Super Trunfo
-              <input
-                name="filtroTrunfo"
-                checked={ filtroTrunfo }
-                onChange={ this.handleChange }
-                data-testid="trunfo-filter"
-                type="checkbox"
-                id="filtroTrunfo"
-              />
-            </label>
-          </div>
-          <div className="border border-blue-400 sm:border-2 md:border-4">
-            <Form
-              cardName={ cardName }
-              cardDescription={ cardDescription }
-              cardAttr1={ cardAttr1 }
-              cardAttr2={ cardAttr2 }
-              cardAttr3={ cardAttr3 }
-              cardImage={ cardImage }
-              cardRare={ cardRare }
-              cardTrunfo={ cardTrunfo }
-              hasTrunfo={ hasTrunfo }
-              onInputChange={ this.handleChange }
-              isSaveButtonDisabled={ isSaveButtonDisabled }
-              onSaveButtonClick={ this.onSaveButtonClick }
+
+      <div className="flex flex-col space-y-4 md:space-y-8 lg:space-y-12">
+        <div className="border border-red-400 sm:border-2 md:border-4 p-4 md:p-8 lg:p-12">
+          <h1 className="text-lg md:text-2xl lg:text-3xl font-bold">Trunfo</h1>
+        </div>
+        <div
+          className="border border-indigo-400 sm:border-2
+        md:border-4 p-4 md:p-8 lg:p-12"
+        >
+          <label
+            htmlFor="filtroName"
+            className="font-bold"
+          >
+            Filtro de busca:
+            <input
+              className="w-full py-2 px-4 rounded-lg
+            border-2 border-gray-200 mt-2 focus:outline-none focus:border-indigo-500"
+              disabled={ filtroTrunfo }
+              name="filtroName"
+              onChange={ this.handleChange }
+              id="filtroName"
+              type="text"
+              data-testid="name-filter"
             />
-          </div>
-          <div className="border border-green-400 sm:border-2 md:border-4">
-            <Card
-              cardName={ cardName }
-              cardDescription={ cardDescription }
-              cardAttr1={ cardAttr1 }
-              cardAttr2={ cardAttr2 }
-              cardAttr3={ cardAttr3 }
-              cardImage={ cardImage }
-              cardRare={ cardRare }
-              cardTrunfo={ cardTrunfo }
-              onInputChange={ this.handleChange }
+          </label>
+        </div>
+        <div
+          className="border border-purple-400 sm:border-2
+        md:border-4 p-4 md:p-8 lg:p-12"
+        >
+          <label
+            htmlFor="filtroRare"
+            className="font-bold"
+          >
+            Raridade:
+            <select
+              className="w-full py-2 px-4 rounded-lg border-2 border-gray-200 mt-2
+            focus:outline-none focus:border-indigo-500"
+              disabled={ filtroTrunfo }
+              name="filtroRare"
+              value={ filtroRare }
+              onChange={ this.handleChange }
+              data-testid="rare-filter"
+              id="filtroRare"
+            >
+              { typesCardrare.map((type) => (
+                <option
+                  key={ type.lenght + 1 }
+                  value={ type }
+                >
+                  {type}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div
+          className="border border-yellow-400 sm:border-2
+        md:border-4 p-4 md:p-8 lg:p-12"
+        >
+          <label
+            htmlFor="filtroTrunfo"
+            className="font-bold"
+          >
+            Super Trunfo
+            <input
+              className="ml-2"
+              name="filtroTrunfo"
+              checked={ filtroTrunfo }
+              onChange={ this.handleChange }
+              data-testid="trunfo-filter"
+              type="checkbox"
+              id="filtroTrunfo"
             />
-          </div>
-          <div className="border border-orange-400 sm:border-2 md:border-4">
-            { newState !== undefined
-              ? (
-                newState
-                  .filter((item) => (item.cardName.includes(filtroName)))
-                  .filter((value) => (
-                    filtroRare !== 'todas' ? value.cardRare === filtroRare : true
-                  ))
-                  .filter((element) => (
-                    filtroTrunfo
-                      ? element.cardTrunfo === true
-                      : element
-                  ))
-                  .map((card) => (
-                    <section key={ card.cardName }>
-                      <Card
-                        cardName={ card.cardName }
-                        cardDescription={ card.cardDescription }
-                        cardAttr1={ card.cardAttr1 }
-                        cardAttr2={ card.cardAttr2 }
-                        cardAttr3={ card.cardAttr3 }
-                        cardImage={ card.cardImage }
-                        cardRare={ card.cardRare }
-                        cardTrunfo={ card.cardTrunfo }
-                      />
-                      <button
-                        onClick={ (event) => {
-                          if (card.cardTrunfo) {
-                            this.setState({ hasTrunfo: false });
-                          }
-                          event.target.parentElement.remove();
-                        } }
-                        type="button"
-                        data-testid="delete-button"
-                      >
-                        Excluir
-                      </button>
-                    </section>
-                  ))
-              )
-              : null}
-          </div>
-        </main>
+          </label>
+        </div>
+        <div
+          className="border border-blue-400 sm:border-2
+        md:border-4 p-4 md:p-8 lg:p-12"
+        >
+          <Form
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
+            onInputChange={ this.handleChange }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            onSaveButtonClick={ this.onSaveButtonClick }
+          />
+        </div>
+        <div
+          className="border border-green-400 sm:border-2
+        md:border-4 p-4 md:p-8 lg:p-12"
+        >
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            onInputChange={ this.handleChange }
+          />
+        </div>
+        <div className="border border-orange-400 sm:border-2 md:border-4">
+          { newState !== undefined
+            ? (
+              newState
+                .filter((item) => (item.cardName.includes(filtroName)))
+                .filter((value) => (
+                  filtroRare !== 'todas' ? value.cardRare === filtroRare : true
+                ))
+                .filter((element) => (
+                  filtroTrunfo
+                    ? element.cardTrunfo === true
+                    : element
+                ))
+                .map((card) => (
+                  <section key={ card.cardName } className="my-4">
+                    <Card
+                      cardName={ card.cardName }
+                      cardDescription={ card.cardDescription }
+                      cardAttr1={ card.cardAttr1 }
+                      cardAttr2={ card.cardAttr2 }
+                      cardAttr3={ card.cardAttr3 }
+                      cardImage={ card.cardImage }
+                      cardRare={ card.cardRare }
+                      cardTrunfo={ card.cardTrunfo }
+                    />
+                  </section>
+                ))
+            )
+            : null}
+        </div>
       </div>
     );
   }
