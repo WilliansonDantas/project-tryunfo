@@ -61,17 +61,12 @@ class App extends React.Component {
     const somaAtributos = 210;
     const limiteAtributo = 90;
     if (
-      cardName !== ''
-    && cardDescription !== ''
-    && cardImage !== ''
+      cardName !== '' && cardDescription !== '' && cardImage !== ''
     && cardRare !== ''
     && ((cardAttr1 * 1) + (cardAttr2 * 1) + (cardAttr3 * 1)) <= somaAtributos
-    && cardAttr1 <= limiteAtributo
-    && cardAttr2 <= limiteAtributo
-    && cardAttr3 <= limiteAtributo
-    && cardAttr1 >= 0
-    && cardAttr2 >= 0
-    && cardAttr3 >= 0) {
+    && cardAttr1 <= limiteAtributo && cardAttr2 <= limiteAtributo
+    && cardAttr3 <= limiteAtributo && cardAttr1 >= 0
+    && cardAttr2 >= 0 && cardAttr3 >= 0) {
       this.setState({ isSaveButtonDisabled: false });
     } else {
       this.setState({ isSaveButtonDisabled: true });
@@ -80,21 +75,9 @@ class App extends React.Component {
 
   render() {
     const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-      hasTrunfo,
-      isSaveButtonDisabled,
-      newState,
-      filtroName,
-      filtroRare,
-      filtroTrunfo,
-    } = this.state;
+      cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
+      cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, newState,
+      filtroName, filtroRare, filtroTrunfo } = this.state;
 
     return (
 
@@ -233,6 +216,20 @@ class App extends React.Component {
                       cardRare={ card.cardRare }
                       cardTrunfo={ card.cardTrunfo }
                     />
+                    <button
+                      onClick={ (event) => {
+                        if (card.cardTrunfo) {
+                          this.setState({ hasTrunfo: false });
+                        }
+                        event.target.parentElement.remove();
+                      } }
+                      type="button"
+                      className="mt-2 px-4 py-2 text-white bg-red-500
+                    hover:bg-red-600 rounded"
+                      data-testid="delete-button"
+                    >
+                      Excluir
+                    </button>
                   </section>
                 ))
             )
