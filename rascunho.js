@@ -1,3 +1,20 @@
+// const { newState } = this.state;
+// newState.push(this.state);
+// this.setState({
+//   cardName: '',
+//   cardDescription: '',
+//   cardAttr1: '0',
+//   cardAttr2: '0',
+//   cardAttr3: '0',
+//   cardImage: '',
+//   cardRare: 'Normal',
+//   cardTrunfo: true,
+//   isSaveButtonDisabled: true,
+//   filtroName: '',
+//   filtroRare: 'todas',
+//   filtroTrunfo: false,
+// });
+// this.hasTrunfo();
 // <div>
 //         <div className="border border-red-400 sm:border-2 md:border-4">
 //           <h1> Trunfo </h1>
